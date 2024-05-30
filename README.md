@@ -447,7 +447,8 @@ GitHub repository: alx-backend-javascript
 Directory: 0x02-ES6_classes
 File: 9-hoisting.js
   
-10. Vroom
+10. Vroom 
+
 mandatory
 Implement a class named Car:
 
