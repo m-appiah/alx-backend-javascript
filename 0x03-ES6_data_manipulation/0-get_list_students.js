@@ -1,7 +1,3 @@
-/**
- *  * Get a list of students.
- *   * @return {Array} An array of student objects.
- *    */
 function getListStudents() {
 	return [
 		{ id: 1, firstName: 'Guillaume', location: 'San Francisco' },
