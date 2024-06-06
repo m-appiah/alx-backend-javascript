@@ -37,3 +37,33 @@ const director: Directors = {
 
 const teacherName: printTeacherFunction = printTeacher;
 console.log(teacherName(teacher.firstName, teacher.lastName));
+
+interface StudentConstructor {
+    new(firstName: string, lastName: string): StudentClassInterface;
+}
+
+interface StudentClassInterface {
+    workOnHomework(): string;
+    displayName(): string;
+}
+
+class StudentClass implements StudentClassInterface {
+    private firstName: string;
+    private lastName: string;
+
+    constructor(firstName: string, lastName: string) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    workOnHomework(): string {
+        return "Currently working";
+    }
+
+    displayName(): string {
+        return this.firstName;
+    }
+}
+const StudentConstructor: StudentConstructor = StudentClass;
+const student: StudentClassInterface = new StudentConstructor("John", "Doe");
+console.log(student.workOnHomework());
+console.log(student.displayName());
