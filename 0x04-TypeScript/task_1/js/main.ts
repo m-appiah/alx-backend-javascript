@@ -10,9 +10,30 @@ interface Teacher {
 const teacher: Teacher = {
     firstName: "John",
     lastName: "Doe",
-    fullTimeEmployee: false,
+    fullTimeEmployee: true,
     location: "London",
-    contract: false,
+    contract: true,
 };
 
-console.log(teacher);
+interface Directors extends Teacher {
+    numberOfReports: number;
+}
+
+function printTeacher(firstName: string, lastName: string): string {
+    return `${firstName.charAt(0)}. ${lastName}`;
+}
+
+interface printTeacherFunction {
+    (firstName: string, lastName: string): string;
+}
+
+const director: Directors = {
+    firstName: "Jane",
+    lastName: "Smith",
+    fullTimeEmployee: true,
+    location: "London",
+    numberOfReports: 17,
+};
+
+const teacherName: printTeacherFunction = printTeacher;
+console.log(teacherName(teacher.firstName, teacher.lastName));
