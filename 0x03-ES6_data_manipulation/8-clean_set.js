@@ -1,5 +1,6 @@
 function cleanSet(set, startString) {
-  if (!startString) return '';
+  // Check if startString is not a string or is empty
+  if (typeof startString !== 'string' || startString === '') return '';
   let result = '';
   for (const item of set) {
     if (item.startsWith(startString)) {
